@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li id="fail" class="active pointer"><a>Failed</a></li>
+        <li id="success" class="pointer"><a>Success</a></li>
+        <li id="disabled" class="pointer"><a>Disabled</a></li>
+        <li id="all" class="pointer"><a>All</a></li>
+      </ul>
+	</div>
+</nav>
+<% @jenkins["jobs"].each do |job| %>
+	<div class="job alert alert-<% if job["color"] == "blue" %>success hide<% elsif job["color"] == "red" %>danger<% else %>info hide<% end %>">
+		<a href="<%= job["url"] %>"><strong><%= job["name"] %></strong></a>
+	</div>
+<% end %>
