@@ -9,7 +9,7 @@ angular
 
 	$interval(function() {
 		$rootScope.time -= 1000;
-		if ($rootScope.time >= 0) {
+		if ($rootScope.time <= 0) {
 			$rootScope.time = 3600000 - new Date().getTime() % 3600000;
 		}
 	}, 1000);
