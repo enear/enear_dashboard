@@ -11,7 +11,7 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul id="active" class="nav navbar-nav side-nav">
 			<li class="<% if params[:controller] == 'dashboard' %>selected<% end %>"><a href="<%= url_for 'dashboard' %>"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-			<li class="<% if params[:controller] == 'jenkins' %>selected<% end %>"><a href="<%= url_for 'jenkins' %>"><i class="fa fa-tasks"></i> Jenkins</a></li>
+			<li class="<% if params[:controller] == 'jenkins' %>selected<% end %>"><a href="<%= url_for 'jenkins' %>"><i class="fa fa-tasks"></i> Jenkins <span class="label label-danger"><%= @jenkins_fails %></span></a></li>
 		</ul>
 	</div>
 </nav>
